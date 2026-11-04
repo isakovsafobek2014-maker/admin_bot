@@ -18,9 +18,9 @@ bot.on('text', async (ctx) => {
     await ctx.sendChatAction('typing');
 
     try {
-        // To'g'ridan-to'g'ri modelga so'rov yuborish
+        // Model nomini xatolikda tavsiya qilinganidek 'gemini-3.8-flash' ga o'zgartiramiz
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
+            model: 'gemini-3.8-flash',
             contents: userText,
         });
 
