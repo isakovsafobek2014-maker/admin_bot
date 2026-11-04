@@ -6,7 +6,7 @@ const ai = new GoogleGenAI({ apiKey: 'AIzaSyAyxWeNYzg8qMfKtVpes0As9f4i92RB54o' }
 async function getAIResponse(promptText) {
     try {
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash', // yoki xatolik bermaydigan model
+            model: 'gemini-3.8-flash', // Model nomi xatolik talab qilganidek yangilandi
             contents: promptText,
         });
 
