@@ -1,8 +1,8 @@
 const { Telegraf } = require('telegraf');
 const { getAIResponse } = require('./javob');
 
-// Telegram Bot Tokeni
-const BOT_TOKEN = process.env.BOT_TOKEN || '8960291028:AAFJzPb5w8HFD031HhaK-fTsLO-PXWIoD24';
+// Telegram Bot Tokeni (Yangi token)
+const BOT_TOKEN = process.env.BOT_TOKEN || '8960291028:AAFN6YgPOJJv9P6jcTaFUTirZ1gXl822Qu0';
 const bot = new Telegraf(BOT_TOKEN);
 
 // /start buyrug'i kelganda ishga tushadigan qism
