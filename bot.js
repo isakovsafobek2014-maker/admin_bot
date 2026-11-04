@@ -1,16 +1,14 @@
 const { Telegraf } = require('telegraf');
 const { getAIResponse } = require('./javob');
+const http = require('http');
 
-// Telegram Bot Tokeni
-const BOT_TOKEN = '8960291028:AAFN6YgPOJJv9P6jcTaFUTirZ1gXl822Qu0';
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const bot = new Telegraf(BOT_TOKEN);
 
-// /start buyrug'i
 bot.start((ctx) => {
     ctx.reply("Assalomu alaykum! Men sizning IT ustoz botingizman. IT bo'yicha istalgan savolingizni bering!");
 });
 
-// Xabarlarni qabul qilish
 bot.on('text', async (ctx) => {
     const userText = ctx.message.text;
     await ctx.sendChatAction('typing');
@@ -35,6 +33,15 @@ bot.on('text', async (ctx) => {
 
 bot.launch();
 console.log('Bot muvaffaqiyatli ishga tushdi...');
+
+// Render Free tier port talabini qondirish uchun HTTP server
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running successfully!\n');
+}).listen(PORT, () => {
+    console.log(`Server port ${PORT} da ishga tushdi.`);
+});
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
