@@ -2,7 +2,7 @@ const { Telegraf } = require('telegraf');
 const { getAIResponse } = require('./javob');
 
 // Telegram Bot Tokeni
-const BOT_TOKEN = process.env.BOT_TOKEN || '8960291028:AAHEyJ0jxp2vt0c0lThkT7jMvtrClcSctV0';
+const BOT_TOKEN = process.env.BOT_TOKEN || '8960291028:AAFJzPb5w8HFD031HhaK-fTsLO-PXWIoD24';
 const bot = new Telegraf(BOT_TOKEN);
 
 // /start buyrug'i kelganda ishga tushadigan qism
