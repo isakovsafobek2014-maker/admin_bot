@@ -1,22 +1,16 @@
 const { Telegraf } = require('telegraf');
 const { getAIResponse } = require('./javob');
 
-// Telegram Bot Tokenini to'g'ridan-to'g'ri yozamiz (Render eskisini o'qib adashib qolmasligi uchun)
+// Telegram Bot Tokeni
 const BOT_TOKEN = '8960291028:AAFN6YgPOJJv9P6jcTaFUTirZ1gXl822Qu0';
 const bot = new Telegraf(BOT_TOKEN);
 
-// /start buyrug'i kelganda ishga tushadigan qism
+// /start buyrug'i
 bot.start((ctx) => {
-    const firstName = ctx.from.first_name || 'Do\'st';
-    ctx.reply(
-        `Assalomu alaykum, ${firstName}! 🤖🚀\n\n` +
-        `Men sizning shaxsiy **IT Ustoz** botingizman.\n` +
-        `Mendan frontend, backend, database, ReactJS, Node.js va istalgan IT mavzulari bo'yicha batafsil ma'lumot so'rashingiz mumkin.\n\n` +
-        `Hozircha savolingizni yozib yuboring! Qani, boshladik! 💻`
-    );
+    ctx.reply("Assalomu alaykum! Men sizning IT ustoz botingizman. IT bo'yicha istalgan savolingizni bering!");
 });
 
-// Foydalanuvchidan matn kelganda ishlaydigan asosiy qism
+// Xabarlarni qabul qilish
 bot.on('text', async (ctx) => {
     const userText = ctx.message.text;
     await ctx.sendChatAction('typing');
@@ -39,9 +33,8 @@ bot.on('text', async (ctx) => {
     }
 });
 
-// Botni ishga tushirish
 bot.launch();
-console.log('Bot to\'liq quvvatda (Gemini 3.8 Flash bilan) ishga tushdi va xabarlarni kutmoqda...');
+console.log('Bot muvaffaqiyatli ishga tushdi...');
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
