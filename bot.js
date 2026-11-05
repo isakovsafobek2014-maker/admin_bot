@@ -8,7 +8,7 @@ const bot = new Telegraf(BOT_TOKEN);
 const LINKS = {
     youtube: "https://www.youtube.com/@wedocoding_official",
     instagram: "https://www.instagram.com/wedocoding_official",
-    telegram_channel: "https://t.me/birga_coding"
+    telegram_channel: "https://t.me/WedoCoding_official"
 };
 
 // Start buyrug'i
